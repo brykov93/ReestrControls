@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:simpleType name="VersionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="3.1.2"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="String2">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="String10">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="String14">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="14"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="String15">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="String20">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="String36">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="36"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="String40">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="40"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="String100">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="String250">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="250"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Integer1">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:totalDigits value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:element name="PERS_LIST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ZGLV">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="VERSION" type="VersionType"/>
+							<xs:element name="DATE" type="xs:date"/>
+							<xs:element name="FILENAME" type="String15"/>
+							<xs:element name="FILENAME_1" type="String15"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="PERS" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ID_PAC" type="String36"/>
+							<xs:element name="FAM" type="String40"/>
+							<xs:element name="IM" type="String40"/>
+							<xs:element name="OT" type="String40"/>
+							<xs:element name="W" type="Integer1"/>
+							<xs:element name="DR" type="xs:date"/>						
+							<xs:element name="FAM_P" type="String40" minOccurs="0"/>
+							<xs:element name="IM_P" type="String40" minOccurs="0"/>
+							<xs:element name="OT_P" type="String40" minOccurs="0"/>
+							<xs:element name="W_P" type="Integer1" minOccurs="0"/>
+							<xs:element name="DR_P" type="xs:date" minOccurs="0"/>					
+							<xs:element name="MR" type="String100" minOccurs="0"/>
+							<xs:element name="DOCTYPE" type="String2" minOccurs="0"/>
+							<xs:element name="DOCSER" type="String10" minOccurs="0"/>
+							<xs:element name="DOCNUM" type="String20" minOccurs="0"/>
+							<xs:element name="SNILS" type="String14" minOccurs="0"/>
+							<xs:element name="STATUSP" type="xs:string" minOccurs="0" />
+							<xs:element name="COMENTP" type="String250" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

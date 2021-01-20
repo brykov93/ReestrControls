@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="SLUCH_LIST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ZGLV">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="VERSION" type="xs:string"/>
+							<xs:element name="DATE" type="xs:date"/>
+							<xs:element name="FILENAME" type="xs:string"/>
+							<xs:element name="FILENAME_1" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ONK_SL" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="IDCASE_Z" type="xs:int"/>
+							<xs:element name="MDIAG" type="xs:int"/>
+							<xs:element name="SLUCH">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SL_ID" type="xs:string"/>
+										<xs:element name="DS1_T" type="xs:int"/>
+										<xs:element name="STAD" type="xs:int"/>
+										<xs:element name="ONK_T" type="xs:int"/>
+										<xs:element name="ONK_N" type="xs:int"/>
+										<xs:element name="ONK_M" type="xs:int"/>
+										<xs:element name="MTSTZ" type="xs:int" minOccurs="0"/>
+										<xs:element name="B_DIAG" maxOccurs="unbounded" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="DIAG_TIP" type="xs:int"/>
+													<xs:element name="DIAG_DATE" type="xs:date"/>
+													<xs:element name="DIAG_CODE" type="xs:int"/>
+													<xs:element name="DIAG_RSLT" type="xs:int"/>
+													<xs:element name="REC_RSLT" type="xs:int"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="B_PROT" maxOccurs="unbounded" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PROT" type="xs:int"/>
+													<xs:element name="D_PROT" type="xs:date"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="SOD" type="xs:float" minOccurs="0"/>
+										<xs:element name="K_FR" type="xs:float" minOccurs="0"/>
+										<xs:element name="WEI" type="xs:float" minOccurs="0"/>
+										<xs:element name="HEI" type="xs:int" minOccurs="0"/>
+										<xs:element name="BSA" type="xs:float" minOccurs="0"/>
+										<xs:element name="ONK_USL" maxOccurs="unbounded" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="NUM_USL" type="xs:int"/>
+													<xs:element name="USL_TIP" type="xs:int"/>
+													<xs:element name="HIR_TIP" type="xs:int" minOccurs="0"/>
+													<xs:element name="LEK_TIP_L" type="xs:int" minOccurs="0"/>
+													<xs:element name="LEK_TIP_V" type="xs:int" minOccurs="0"/>
+													<xs:element name="LEC_PR" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="REGNUM" type="xs:string"/>
+																<xs:element name="DATE_INJ" type="xs:date" maxOccurs="unbounded"/>
+																<xs:element name="CODE_SH" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="PPTR" type="xs:int" minOccurs="0"/>
+													<xs:element name="V_CHEM" type="xs:int" minOccurs="0"/>
+													<xs:element name="LUCH_TIP" type="xs:int" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
